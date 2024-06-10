@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct SwiftUIView: View {
-    
     @State private var progress = 0.0
     @State private var shouldNavigate = false
-    
     
     var body: some View {
         NavigationView {
