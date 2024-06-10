@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BAEC916B2C16BAD600EF0568 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC916A2C16BAD600EF0568 /* HistoryView.swift */; };
+		BAEC916F2C16F4D100EF0568 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC916E2C16F4D100EF0568 /* SwiftUIView.swift */; };
 		BAF459D42C1063BF0073D51D /* GeminiAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF459D32C1063BF0073D51D /* GeminiAIApp.swift */; };
 		BAF459D62C1063BF0073D51D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF459D52C1063BF0073D51D /* ContentView.swift */; };
 		BAF459D82C1063C00073D51D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAF459D72C1063C00073D51D /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		BAEC916A2C16BAD600EF0568 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BAEC916E2C16F4D100EF0568 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		BAF459D02C1063BF0073D51D /* GeminiAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeminiAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF459D32C1063BF0073D51D /* GeminiAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiAIApp.swift; sourceTree = "<group>"; };
 		BAF459D52C1063BF0073D51D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				BAF459D32C1063BF0073D51D /* GeminiAIApp.swift */,
 				BAF459D52C1063BF0073D51D /* ContentView.swift */,
+				BAEC916E2C16F4D100EF0568 /* SwiftUIView.swift */,
 				BAEC916A2C16BAD600EF0568 /* HistoryView.swift */,
 				BAF459D72C1063C00073D51D /* Assets.xcassets */,
 				BAF459D92C1063C00073D51D /* Preview Content */,
@@ -159,6 +162,7 @@
 				BAEC916B2C16BAD600EF0568 /* HistoryView.swift in Sources */,
 				BAF459EB2C1064E70073D51D /* APIKey.swift in Sources */,
 				BAF459D42C1063BF0073D51D /* GeminiAIApp.swift in Sources */,
+				BAEC916F2C16F4D100EF0568 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
