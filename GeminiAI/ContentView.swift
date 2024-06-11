@@ -5,8 +5,8 @@
 //  Created by R95 on 05/06/24.
 //
 
-import GoogleGenerativeAI
 import SwiftUI
+import GoogleGenerativeAI
 
 struct ContentView: View {
     let model = GenerativeModel(name: "gemini-pro", apiKey: APIKey.default)
@@ -87,7 +87,6 @@ struct ContentView: View {
                 
                 let entry = SearchEntry(prompt: userPrompt, response: newResponse, date: Date())
                 searchHistory.append(entry)
-                userPrompt = ""
             } catch {
                 isLoading = false
                 response = "Something Went Wrong: \(error.localizedDescription)"
@@ -102,6 +101,13 @@ struct SearchEntry: Identifiable {
     let response: String
     let date: Date
 }
+
+let itemFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .short
+    return formatter
+}()
 
 struct CustomTextField: UIViewRepresentable {
     var placeholder: String
@@ -154,6 +160,7 @@ struct CustomTextField: UIViewRepresentable {
         }
     }
 }
+
 
 #Preview {
     ContentView()

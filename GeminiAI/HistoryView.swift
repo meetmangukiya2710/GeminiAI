@@ -19,36 +19,11 @@ struct HistoryView: View {
                     Text(entry.response)
                         .font(.subheadline)
                     Text(entry.date, style: .date)
-                        .font(.caption)
+                        .font(.footnote)
                 }
                 .padding(.vertical, 4)
             }
             .navigationTitle("Search History")
-            
-            Button(action: shareHistory) {
-                Text("Share History")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            }
-            .padding()
-        }
-    }
-    
-    func shareHistory() {
-        let historyText = searchHistory.map { entry in
-            """
-            Prompt: \(entry.prompt)
-            Response: \(entry.response)
-            Date: \(entry.date)
-            """
-        }.joined(separator: "\n\n")
-        
-        let activityViewController = UIActivityViewController(activityItems: [historyText], applicationActivities: nil)
-        
-        if let rootViewController = UIApplication.shared.windows.first?.rootViewController {
-            rootViewController.present(activityViewController, animated: true, completion: nil)
         }
     }
 }
