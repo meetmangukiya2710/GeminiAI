@@ -11,7 +11,7 @@ import SwiftUI
 struct GeminiAIApp: App {
     var body: some Scene {
         WindowGroup {
-            SwiftUIView()
+            ContentView()
         }
     }
 }

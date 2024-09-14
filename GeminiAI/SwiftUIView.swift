@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+    
     @State private var progress = 0.0
     @State private var shouldNavigate = false
     
@@ -27,9 +28,10 @@ struct SwiftUIView: View {
                             startProgress()
                         }
                 }
-                
-                NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), isActive: $shouldNavigate) {
-                }
+                NavigationLink(destination: LoginPage().navigationBarBackButtonHidden(true), isActive: $shouldNavigate) {}
+            }
+            .onAppear() {
+                DBHelper.creatFile()
             }
         }
     }

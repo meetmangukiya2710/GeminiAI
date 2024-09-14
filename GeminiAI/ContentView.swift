@@ -43,56 +43,43 @@ struct ContentView: View {
                     }
                 }
                 
-                ZStack {
-                    HStack {
-                        CustomTextField(placeholder: "Ask Anything", text: $userPrompt, isEditing: $isEditing)
-                            .lineLimit(100)
-                            .padding()
-                            .background(Color.indigo.opacity(0.2))
-                            .cornerRadius(20)
-                            .frame(height: 60)
-                            .disableAutocorrection(true)
-                            .onSubmit {
-                                generateResponse()
-                            }
-                        
-                        Button(action: generateResponse) {
-                            Text("Send")
-                                .padding()
-                                .background(Color.indigo)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
+                TextField("Ask Anything", text: $userPrompt, axis: .vertical)
+                    .padding()
+                    .background(Color.indigo.opacity(0.2))
+                    .cornerRadius(20)
+                    .disableAutocorrection(true)
+                    .onSubmit {
+                        generateResponse()
                     }
-                }
-            }
-            .padding()
-            .navigationBarHidden(true)
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
         }
+        .padding()
+        .navigationBarHidden(true)
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
+
+
+func generateResponse() {
+    isLoading = true
+    response = ""
     
-    func generateResponse() {
-        isLoading = true
-        response = ""
-        
-        Task {
-            do {
-                let result = try await model.generateContent(userPrompt)
-                isLoading = false
-                let newResponse = result.text ?? "No Response Found"
-                response = newResponse
-                
-                let entry = SearchEntry(prompt: userPrompt, response: newResponse, date: Date())
-                searchHistory.append(entry)
-            } catch {
-                isLoading = false
-                response = "Something Went Wrong: \(error.localizedDescription)"
-            }
+    Task {
+        do {
+            let result = try await model.generateContent(userPrompt)
+            isLoading = false
+            let newResponse = result.text ?? "No Response Found"
+            response = newResponse
+            
+            let entry = SearchEntry(prompt: userPrompt, response: newResponse, date: Date())
+            searchHistory.append(entry)
+        } catch {
+            isLoading = false
+            response = "Something Went Wrong: \(error.localizedDescription)"
         }
     }
+}
 }
 
 struct SearchEntry: Identifiable {
