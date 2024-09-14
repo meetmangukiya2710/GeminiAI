@@ -20,12 +20,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: HistoryView(searchHistory: $searchHistory)) {
-                    VStack {
-                        Text("History")
-                            .padding(.leading, 300)
-                    }
-                }
+//                NavigationLink(destination: HistoryView(searchHistory: $searchHistory)) {
+//                    VStack {
+//                        Text("History")
+//                            .padding(.leading, 300)
+//                    }
+//                }
                 
                 Text("Gemini AI")
                     .font(.largeTitle)
